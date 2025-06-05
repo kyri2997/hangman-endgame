@@ -10,15 +10,18 @@ export default function HangmanEndgame() {
     const [guessedLetters, setGuessedLetters] = useState([])
 
     // Derived values
-    const numGuessesLeft = heroes.length
     const wrongGuessCount =
         guessedLetters.filter(letter => !currentWord.includes(letter)).length
+
+    const maxGuesses = 8
+    const numGuessesLeft = maxGuesses - wrongGuessCount
     const isGameWon =
         currentWord.split("").every(letter => guessedLetters.includes(letter))
-    const isGameLost = wrongGuessCount >= numGuessesLeft
+    const isGameLost = wrongGuessCount >= maxGuesses
     const isGameOver = isGameWon || isGameLost
-    const lastGuessedLetter = guessedLetters[guessedLetters.length]
+    const lastGuessedLetter = guessedLetters[guessedLetters.length-1]
     const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+    
 
     // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
