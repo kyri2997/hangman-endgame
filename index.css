@@ -78,7 +78,7 @@ section.heroes-chips {
     flex-wrap: wrap;
     gap: 5px;
     justify-content: center;
-    max-width: 350px;
+    max-width: 300px;
     margin-bottom: 36px;
 }
 

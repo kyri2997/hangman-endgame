@@ -39,20 +39,20 @@ export default function HangmanEndgame() {
         setGuessedLetters([])
     }
 
-    const heroElements = heroes.map((lang, index) => {
+    const heroElements = heroes.map((hero, index) => {
         const isHeroLost = index < wrongGuessCount
         const styles = {
-            backgroundColor: lang.backgroundColor,
-            color: lang.color
+            backgroundColor: hero.backgroundColor,
+            color: hero.color
         }
         const className = clsx("chip", isHeroLost && "lost")
         return (
             <span
                 className={className}
                 style={styles}
-                key={lang.name}
+                key={hero.name}
             >
-                {lang.name}
+                {hero.name}
             </span>
         )
     })
