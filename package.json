@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s06j0u5",
-  "description": "https://scrimba.com/frontend-path-c0j/~064x",
+  "name": "HangmanEndgame",
+  "description": "Hangman style game with a twist",
   "scripts": {
     "start": "vite",
     "dev": "vite",

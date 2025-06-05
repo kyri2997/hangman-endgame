@@ -4,7 +4,7 @@ import { heroes } from "./heroes"
 import { getFarewellText, getRandomWord } from "./utils"
 import Confetti from "react-confetti"
 
-export default function AssemblyEndgame() {
+export default function HangmanEndgame() {
     // State values
     const [currentWord, setCurrentWord] = useState(() => getRandomWord())
     const [guessedLetters, setGuessedLetters] = useState([])
@@ -134,7 +134,7 @@ export default function AssemblyEndgame() {
                     />
             }
             <header>
-                <h1>Assembly: Endgame</h1>
+                <h1>Hangman: Endgame</h1>
                 <p>Guess the word within 8 attempts to keep the
                 heroes safe from Thanos!</p>
             </header>
