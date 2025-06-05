@@ -1,4 +1,4 @@
-export const languages = [
+export const heroes = [
     {
         name: "Iron Man",
         backgroundColor: "#E2680F",
@@ -15,7 +15,7 @@ export const languages = [
         color: "#1E1E1E",
     },
     {
-        name: "Hulk",
+        name: "Falcon",
         backgroundColor: "#2ED3E9",
         color: "#1E1E1E",
     },
@@ -38,10 +38,5 @@ export const languages = [
         name: "Ant Man",
         backgroundColor: "#D02B2B",
         color: "#F9F4DA",
-    },
-    {
-        name: "Thanos Wins",
-        backgroundColor: "#2D519F",
-        color: "#F9F4DA",
-    },
+    }
 ]

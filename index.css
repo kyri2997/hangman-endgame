@@ -22,15 +22,15 @@ header {
 }
 
 header > h1 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #F9F4DA;
 }
 
 header > p {
-    font-size: 0.875rem;
+    font-size: 1rem;
     max-width: 350px;
-    color: #8E8E8E;
+    color: #F9F4DA;
 }
 
 section.game-status {
@@ -73,7 +73,7 @@ section.game-status > h2 {
     margin: 5px
 }
 
-section.language-chips {
+section.heroes-chips {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
@@ -91,6 +91,7 @@ span.chip {
 /* Dimmed overlay with skull on "lost" languages */
 span.chip.lost::before {
     content: "💀";
+    color:white;
     position: absolute;
     display: flex;
     align-items: center;

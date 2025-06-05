@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { clsx } from "clsx"
-import { languages } from "./languages"
+import { heroes } from "./heroes"
 import { getFarewellText, getRandomWord } from "./utils"
 import Confetti from "react-confetti"
 
@@ -10,14 +10,14 @@ export default function AssemblyEndgame() {
     const [guessedLetters, setGuessedLetters] = useState([])
 
     // Derived values
-    const numGuessesLeft = languages.length - 1
+    const numGuessesLeft = heroes.length
     const wrongGuessCount =
         guessedLetters.filter(letter => !currentWord.includes(letter)).length
     const isGameWon =
         currentWord.split("").every(letter => guessedLetters.includes(letter))
     const isGameLost = wrongGuessCount >= numGuessesLeft
     const isGameOver = isGameWon || isGameLost
-    const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
+    const lastGuessedLetter = guessedLetters[guessedLetters.length]
     const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
 
     // Static values
@@ -36,13 +36,13 @@ export default function AssemblyEndgame() {
         setGuessedLetters([])
     }
 
-    const languageElements = languages.map((lang, index) => {
-        const isLanguageLost = index < wrongGuessCount
+    const heroElements = heroes.map((lang, index) => {
+        const isHeroLost = index < wrongGuessCount
         const styles = {
             backgroundColor: lang.backgroundColor,
             color: lang.color
         }
-        const className = clsx("chip", isLanguageLost && "lost")
+        const className = clsx("chip", isHeroLost && "lost")
         return (
             <span
                 className={className}
@@ -99,7 +99,7 @@ export default function AssemblyEndgame() {
         if (!isGameOver && isLastGuessIncorrect) {
             return (
                 <p className="farewell-message">
-                    {getFarewellText(languages[wrongGuessCount - 1].name)}
+                    {getFarewellText(heroes[wrongGuessCount - 1].name)}
                 </p>
             )
         }
@@ -108,7 +108,7 @@ export default function AssemblyEndgame() {
             return (
                 <>
                     <h2>You win!</h2>
-                    <p>Well done! 🎉</p>
+                    <p>The world is saved! 🎉</p>
                 </>
             )
         }
@@ -116,7 +116,7 @@ export default function AssemblyEndgame() {
             return (
                 <>
                     <h2>Game over!</h2>
-                    <p>You lose! Better start learning Assembly 😭</p>
+                    <p>You lose! Thanos snap incoming 😭</p>
                 </>
             )
         }
@@ -134,9 +134,9 @@ export default function AssemblyEndgame() {
                     />
             }
             <header>
-                <h1>Assembly: Endgame 2</h1>
+                <h1>Assembly: Endgame</h1>
                 <p>Guess the word within 8 attempts to keep the
-                programming world safe from Assembly!</p>
+                heroes safe from Thanos!</p>
             </header>
 
             <section
@@ -147,8 +147,8 @@ export default function AssemblyEndgame() {
                 {renderGameStatus()}
             </section>
 
-            <section className="language-chips">
-                {languageElements}
+            <section className="heroes-chips">
+                {heroElements}
             </section>
 
             <section className="word">
